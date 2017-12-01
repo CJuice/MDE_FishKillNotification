@@ -28,8 +28,8 @@ strToEmail = PrivateInformation.PrivateInformation.strEmailUsername             
 strSMTPServer = PrivateInformation.PrivateInformation.strSMTPServer                                         # SMPT Server Name
 intPortNumber = 587                                                                                         # SMTP Server port. For TLS not SSL
 strTokenURL = PrivateInformation.PrivateInformation.strTokenURL                                             # URL for generating token
-strLOGFileName = "LOG_MDEFishKillNotificationProcess.txt"
-# strLOGFileName = "test.txt"
+strLOGFileName = "LOG_MDEFishKillNotificationProcess.log"
+# strLOGFileName = "test.log"
 tupTodayDateTime = datetime.datetime.utcnow().timetuple()
 strTodayDateTimeForLogging = "{}/{}/{} UTC[{}:{}:{}]".format(tupTodayDateTime[0]
                                                           , tupTodayDateTime[1]
