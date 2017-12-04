@@ -23,10 +23,10 @@ strUserPhoneFieldName = PrivateInformation.PrivateInformation.strUserPhoneFieldN
 strUserEmailFieldName = PrivateInformation.PrivateInformation.strUserEmailFieldName                         # User email address
 strDeadFishCountEstimateFieldName = PrivateInformation.PrivateInformation.strDeadFishCountEstimateFieldName # Estimate of number of dead fish
 intHoursCheckValue = PrivateInformation.PrivateInformation.intHoursCheckValue                               # Number of hours to check when a feature was added
-strFromEmail = PrivateInformation.PrivateInformation.strEmailUsername                                       # Email sender
-strToEmail = PrivateInformation.PrivateInformation.strEmailUsername                                         # Email receiver
+strFromEmail = PrivateInformation.PrivateInformation.strEmailUsername_From                                  # Email sender
+strToEmail = PrivateInformation.PrivateInformation.strEmailUsername_To                                      # Email receiver
 strSMTPServer = PrivateInformation.PrivateInformation.strSMTPServer                                         # SMPT Server Name
-intPortNumber = 587                                                                                         # SMTP Server port. For TLS not SSL
+intPortNumber = 25                                                                                         # SMTP Server port. For TLS not SSL
 strTokenURL = PrivateInformation.PrivateInformation.strTokenURL                                             # URL for generating token
 strLOGFileName = "LOG_MDEFishKillNotificationProcess.log"
 # strLOGFileName = "test.log"
@@ -113,7 +113,7 @@ if len(dictObjectIDandAttributes) > 0:
         message = message + strNewEntryDetails
     try:
         # server = smtplib.SMTP(strSMTPServer, 587)
-        server = smtplib.SMTP(strSMTPServer, 25)
+        server = smtplib.SMTP(strSMTPServer, intPortNumber)
         server.ehlo()
         server.starttls()
         # server.login(PrivateInformation.PrivateInformation.strEmailUsername, PrivateInformation.PrivateInformation.strEmailCredentialSecret)
